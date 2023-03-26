@@ -1,0 +1,18 @@
+@import "../../../../../../styles.scss";
+
+.primary-background {
+  background-color: $my-primary-70;
+}
+
+.info-background {
+  background-color: $my-primary-20;
+}
+
+.footer {
+  background-color: $my-primary-70;
+  width: 100%;
+  //   text-align: left;
+  //   font-size: 16px;
+  //   padding: 50px;
+  margin-top: 50px;
+}

@@ -1,0 +1,64 @@
+{
+  "appleProducts": [
+    {
+      "id": "uyefh2812309i1qwee",
+      "name": "iPhone 14 Pro Max, 128 ГБ, Чёрный, (MQC63)",
+      "articleCode": "MQC63RU/A",
+      "price": 402340,
+      "discount": 10,
+      "count": 0,
+      "new": false,
+      "discountAvailable": true,
+      "color": "black",
+      "type": "iPhone",
+      "model": "iPhone 14 Pro Max",
+      "detailsImages": [
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045971083.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045854626.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160046305979.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160048270625.png@webp"
+      ],
+      "imageUrl": "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/220908083550765075/221010160045356884.jpg@webp"
+    },
+    {
+      "id": "uyefh2812ffaa9i1qwee",
+      "name": "iPhone 14 Pro Max, 128 ГБ, Чёрный, (MQC63)",
+      "articleCode": "MQC63RU/A",
+      "price": 40232340,
+      "discount": 10,
+      "count": 0,
+      "new": true,
+      "discountAvailable": false,
+      "color": "black",
+      "type": "iPhone",
+      "model": "iPhone 14 Pro Max",
+      "detailsImages": [
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045971083.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045854626.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160046305979.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160048270625.png@webp"
+      ],
+      "imageUrl": "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/220908083551290560/221010160035950226.jpg@webp"
+    },
+    {
+      "id": "uyefh2812309i1qhjyjwee",
+      "name": "iPhone 14 Pro Max, 128 ГБ, Чёрный, (MQC63)",
+      "articleCode": "MQC63RU/A",
+      "price": 23420,
+      "discount": 10,
+      "count": 0,
+      "new": false,
+      "discountAvailable": true,
+      "color": "black",
+      "type": "iPhone",
+      "model": "iPhone 14 Pro Max",
+      "detailsImages": [
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045971083.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160045854626.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160046305979.png@webp",
+        "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220908083550765075/221010160048270625.png@webp"
+      ],
+      "imageUrl": "https://cdn0.ipoint.kz/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fit:230/bg:fff/plain/s3://catalog-products/220908083551814087/221010160020163189.jpg@webp"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+@import "../../../../styles.scss";
+
+.cart-logo {
+  background-color: $my-primary-100;
+}
+
+.info-background {
+  background-color: $my-primary-20;
+}
+
+.details-background {
+  background-color: #f6f6f6;
+}
+
+.details-cart-hover {
+  &:hover {
+    background-color: $my-primary-40;
+  }
+}
+
+.cart-btn img {
+  &:hover {
+    background-color: $my-primary-70;
+  }
+  &:active {
+    background-color: $my-primary-40;
+  }
+}

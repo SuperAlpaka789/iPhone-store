@@ -1,0 +1,60 @@
+<div
+  class="flex gap-10 flex-col max-w-[333px] p-4 card-border hover:scale-110 duration-300"
+>
+  <div class="flex gap-4">
+    <span
+      *ngIf="productProps?.new"
+      class="rounded-full bg-green-600 text-white px-3"
+      >New</span
+    >
+    <span
+      *ngIf="productProps?.discountAvailable"
+      class="rounded-full bg-red-600 text-white px-3"
+      >Акция</span
+    >
+  </div>
+  <div
+    [routerLink]="['details', productProps?.id]"
+    class="self-center cursor-pointer"
+  >
+    <img [src]="productProps?.imageUrl" alt="iphone image" />
+  </div>
+  <div>
+    <p
+      [routerLink]="['details', productProps?.id]"
+      class="text-lg cursor-pointer"
+    >
+      {{ productProps!.name }}
+    </p>
+    <p class="opacity-60">Артикул: {{ productProps?.articleCode }}</p>
+  </div>
+  <div class="flex flex-col">
+    <span class="line-through text-red-400">{{
+      (productProps!.price * productProps!.discount) / 100 + productProps!.price
+        | currency : "RUB"
+    }}</span>
+    <span class="text-2xl">{{ productProps!.price | currency : "RUB" }}</span>
+  </div>
+  <div class="flex justify-between w-full">
+    <div class="w-4/5">
+      <p class="text-xs opacity-50">
+        Рассрочка от 3 до 60 мес от
+        {{
+          (productProps!.price * productProps!.discount) / 100
+            | currency : "RUB"
+        }}
+        $ /мес.
+      </p>
+      <p class="text-xs opacity-50">Выгода до 99% с Trade-in</p>
+    </div>
+    <div>
+      <button (click)="onAddToCartClick()" class="cart-btn">
+        <img
+          class="cart-logo h-14 w-14 rounded-full p-3"
+          src="https://cdn0.it4profit.com/files/7/catalog-add-cart-icon.svg"
+          alt="cart logo"
+        />
+      </button>
+    </div>
+  </div>
+</div>

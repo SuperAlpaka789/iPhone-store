@@ -1,1 +1,268 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "~@marcreichel/angular-carousel/css/main.css";
+
+/* Theme */
+
+@import "~@marcreichel/angular-carousel/themes/stripes.css";
+/* or */
+@import "~@marcreichel/angular-carousel/themes/dots.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+$my-primary-20: #f5ebeb;
+$my-primary-40: #e4d0d0;
+$my-primary-70: #d5b4b4;
+$my-primary-100: #867070;
+
+.my-primary-100 {
+  background-color: #867070;
+}
+.my-primary-70 {
+  background-color: #d5b4b4;
+}
+.my-primary-40 {
+  background-color: #e4d0d0;
+}
+.my-primary-20 {
+  background-color: #f5ebeb;
+}
+
+/*--------------------------*\
+    #COLORS
+\*--------------------------*/
+
+// base colors
+.color-white {
+  background-color: #fff;
+}
+.color-black {
+  background-color: #000;
+}
+
+// blue colors
+.color-blue1 {
+  background-color: #002bff;
+}
+.color-blue2 {
+  background-color: #012bfe;
+}
+.color-blue3 {
+  background-color: #004aff;
+}
+.color-blue4 {
+  background-color: #005fff;
+}
+.color-blue5 {
+  background-color: #0076ff;
+}
+.color-blue6 {
+  background-color: #0093ff;
+}
+.color-blue7 {
+  background-color: #00b0ff;
+}
+.color-blue8 {
+  background-color: #00d3ff;
+}
+.color-blue9 {
+  background-color: #00e8ff;
+}
+.color-blue10 {
+  background-color: #0012b9;
+}
+
+//primary colors
+.color-primary-100 {
+  background-color: #a98d66;
+}
+.color-primary-50 {
+  background-color: #baa485;
+}
+.color-primary-20 {
+  background-color: #c3af94;
+}
+.color-primary-10 {
+  background-color: #d4c6b2;
+}
+.color-primary-05 {
+  background-color: #ddd1c2;
+}
+.color-primary-0 {
+  background-color: #eee8e0;
+}
+
+//brown colors
+.color-brown7 {
+  background-color: #b5a07c;
+}
+
+//gold colors
+.color-gold1 {
+  background-color: #e1c591;
+}
+.color-gold2 {
+  background-color: #f2deb9;
+}
+.color-gold3 {
+  background-color: #d1b786;
+}
+.color-gold4 {
+  background-color: #fff2d9;
+}
+
+// gray colors
+.color-gray1 {
+  background-color: #505050;
+}
+.color-gray2 {
+  background-color: #f4f4f4;
+}
+.color-gray3 {
+  background-color: #f2efe9;
+}
+.color-gray4 {
+  background-color: #999;
+}
+.color-gray5 {
+  background-color: #ccc;
+}
+.color-gray6 {
+  background-color: #e9ecef;
+}
+.color-gray7 {
+  background-color: #212738;
+}
+.color-gray8 {
+  background-color: #f4f4f4;
+}
+.color-gray9 {
+  background-color: #666;
+}
+.color-gray10 {
+  background-color: #747881;
+}
+.color-gray11 {
+  background-color: #e9ecef;
+}
+.color-gray12 {
+  background-color: #212738;
+}
+.color-gray13 {
+  background-color: #ececec;
+}
+.color-gray14 {
+  background-color: #3a3a3a;
+}
+.color-gray15 {
+  background-color: #f2f2f2;
+}
+.color-gray16 {
+  background-color: #505260;
+}
+.color-gray17 {
+  background-color: #333;
+}
+.color-gray60 {
+  background-color: #e5e5e5;
+}
+.color-gray70 {
+  background-color: #d0d3d4;
+}
+
+//orange colors
+.color-orange1 {
+  background-color: #fd5e00;
+}
+.color-orange {
+  background-color: #ff7500;
+}
+
+// red colors
+.color-red1 {
+  background-color: #fe5757;
+}
+
+// violet colors
+.color-violet1 {
+  background-color: #6335cc;
+}
+.color-violet2 {
+  background-color: #1f1142;
+}
+
+// red colors
+.color-red1 {
+  background-color: #fe5757;
+}
+// support colors
+.color-success-100 {
+  background-color: #006136;
+}
+.color-success-50 {
+  background-color: #55a500;
+}
+.color-success-05 {
+  background-color: #21d99a;
+}
+.color-warning-100 {
+  background-color: #21d99a;
+}
+.color-warning-50 {
+  background-color: #ff7500;
+}
+.color-warning-05 {
+  background-color: #fff2d9;
+}
+.color-alert-100 {
+  background-color: #b2301a;
+}
+.color-alert-50 {
+  background-color: #ed4023;
+}
+.color-alert-05 {
+  background-color: #fce3de;
+}
+
+// info colors
+.color-info-100 {
+  background-color: #3166fc;
+}
+.color-info-05 {
+  background-color: #e6edff;
+}
+/*------------------------------------*\
+    #COLORS WITH OPACITY
+\*------------------------------------*/
+
+//gray colors with opacity
+.color-opacity-gray1 {
+  background-color: #ffffff33;
+}
+.color-opacity-gray2 {
+  background-color: #ffffff66;
+}
+.color-opacity-gray3 {
+  background-color: #ffffff99;
+}
+.color-opacity-gray4 {
+  background-color: #ffffffcc;
+}
+.color-opacity-gray5 {
+  background-color: #ffffffe5;
+}
+.color-opacity-gray6 {
+  background-color: #fffffff2;
+}
+.color-opacity-gray7 {
+  background-color: #ffffffbf;
+}

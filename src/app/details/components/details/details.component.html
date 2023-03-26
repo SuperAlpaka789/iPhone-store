@@ -1,0 +1,104 @@
+<div *ngIf="product$ | async as product; else elseBlock">
+  <div class="w-full flex justify-center mb-8">
+    <h1 class="max-w-[1200px] text-2xl font-extrabold px-5">
+      {{ product.name }}
+    </h1>
+  </div>
+
+  <div
+    class="grid justify-center items-center mx-auto grid-cols-2 break-1100:grid-cols-1 max-w-[1200px] rounded-xl details-background"
+  >
+    <div class="flex gap-10 flex-col p-4">
+      <angular-carousel [infinite]="true">
+        <ng-container *ngFor="let imageUrl of product.detailsImages">
+          <div *angularCarouselSlide class="flex justify-center">
+            <img [src]="imageUrl" alt="iphone image" />
+          </div>
+        </ng-container>
+      </angular-carousel>
+    </div>
+
+    <div
+      class="flex flex-col gap-9 p-6 break-1100:p-11 rounded-xl info-background"
+    >
+      <div class="flex justify-between items-center">
+        <p class="opacity-60">Артикул: {{ product.articleCode }}</p>
+        <div class="flex gap-2">
+          <span
+            *ngIf="product.new"
+            class="rounded-full bg-green-600 text-white px-3"
+            >New</span
+          >
+          <span
+            *ngIf="product.discountAvailable"
+            class="rounded-full bg-red-600 text-white px-3"
+            >Акция</span
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-lg">Color:</span>
+        <span class="block w-3 h-3 bg-black"></span>
+      </div>
+      <div class="w-full h-[2px] bg-gray-300"></div>
+      <div class="flex justify-between items-center">
+        <div class="flex flex-col">
+          <span class="text-lg line-through text-red-400">{{
+            (product.price! * product.discount!) / 100 + product.price!
+              | currency : "RUB"
+          }}</span>
+          <span class="text-3xl">{{ product.price | currency : "RUB" }}</span>
+        </div>
+        <div class="flex flex-col gap-3">
+          <p class="text-lg">Кредит и рассрочка</p>
+          <p class="text-lg">
+            от
+            <strong>{{
+              (product.price! * product.discount!) / 100 | currency : "RUB"
+            }}</strong>
+            до 60 мес
+          </p>
+        </div>
+      </div>
+      <div
+        class="flex justify-between break-600:flex-col break-600:items-center break-600:gap-5"
+      >
+        <button (click)="onAddToCartButtonClick(product)" class="cart-btn">
+          <img
+            class="cart-logo h-14 w-48 rounded-full p-3 details-cart-hover break-600:w-auto"
+            src="https://cdn0.it4profit.com/files/7/catalog-add-cart-icon.svg"
+            alt="cart logo"
+          />
+        </button>
+        <button
+          class="cart-logo h-14 w-48 rounded-full p-3 text-sm text-white details-cart-hover"
+        >
+          Оформить рассрочку
+        </button>
+      </div>
+      <div class="w-full h-[2px] bg-gray-300"></div>
+      <div class="flex flex-col gap-2">
+        <p class="text-lg">
+          Бесплатная экспресс доставка за 3 часа по Алматы и Астана. Официальная
+          гарантия: 12 месяцев
+        </p>
+        <p class="text-lg">
+          <strong>Комплект поставки:</strong>
+        </p>
+        <p class="text-lg">
+          iPhone, Документация, Кабель-переходник с USB-C на Lightning
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="flex justify-center items-center h-full w-full">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+
+<div class="flex justify-center">
+  <app-info-flyer></app-info-flyer>
+</div>

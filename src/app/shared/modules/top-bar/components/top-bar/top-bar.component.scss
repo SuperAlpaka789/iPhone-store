@@ -1,0 +1,16 @@
+@import "../../../../../../styles.scss";
+
+.burger-drop {
+  z-index: -1;
+  transition: transform 0.4s ease-in-out;
+  transform: translate(0, -100%);
+  background-color: $my-primary-40;
+
+  &--active {
+    transform: translate(0, 0%);
+  }
+}
+
+a:hover {
+  color: $my-primary-100;
+}

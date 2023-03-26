@@ -1,0 +1,42 @@
+<div class="flex justify-center items-center mx-5">
+  <div
+    *ngIf="allProducts"
+    class="grid justify-center grid-cols-3 gap-10 mx-auto max-w-[1200px] break-877:grid-cols-2 break-600:grid-cols-1"
+  >
+    <app-card
+      *ngFor="
+        let product of allProducts
+          | paginate
+            : {
+                itemsPerPage: tableSize,
+                currentPage: page,
+                totalItems: count
+              };
+        let i = index
+      "
+      [product]="product"
+    ></app-card>
+  </div>
+
+  <div
+    *ngIf="!allProducts"
+    class="grid justify-center grid-cols-3 gap-10 mx-auto max-w-[1200px] break-877:grid-cols-2 break-600:grid-cols-1"
+  >
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+    <app-skeleton-card></app-skeleton-card>
+  </div>
+</div>
+<div class="flex justify-center mt-10">
+  <pagination-controls
+    previousLabel="Назад"
+    nextLabel="Вперед"
+    (pageChange)="onTableDataChange($event)"
+  >
+  </pagination-controls>
+</div>
