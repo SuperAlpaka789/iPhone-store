@@ -21,6 +21,7 @@ import { DeliveryInfoModule } from './delivery-info/delivery-info.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { OrderCompletionModule } from './order-completion/order-completion.module';
 import { PersistanceService } from './shared/services/persistance.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,7 +44,10 @@ import { PersistanceService } from './shared/services/persistance.service';
     ContactsModule,
     OrderCompletionModule,
   ],
-  providers: [PersistanceService],
+  providers: [
+    PersistanceService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
