@@ -21,3 +21,8 @@ export const removeFromCartAction = createAction(
   ActionTypes.REMOVE_PRODUCT_FROM_CART,
   props<{ id: string }>()
 );
+
+export const hydrateStoreAction = createAction(
+  ActionTypes.HYDRATE_STORE_FROM_LOCAL_STORAGE,
+  props<{ selectedProducts: ProductsInterface[] }>()
+);

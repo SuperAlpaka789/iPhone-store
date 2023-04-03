@@ -5,4 +5,5 @@ export enum ActionTypes {
   ADD_PRODUCT_QUANTITY = '[add product quantity] add product quantity',
   SUBTRUCT_PRODUCT_QUANTITY = '[subtruct product quantity] subtruct product quantity',
   REMOVE_PRODUCT_FROM_CART = '[remove product from cart] remove product from cart',
+  HYDRATE_STORE_FROM_LOCAL_STORAGE = '[hydrate storage] hydrate storage',
 }

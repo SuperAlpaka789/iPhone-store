@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GetProductsService } from '../shared/services/getProducts.service';
 import { SkeletonCardModule } from '../shared/modules/skeleton-card/skeleton-card.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterBarModule } from '../shared/modules/filter-bar/filter-bar.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     CardModule,
     RouterModule.forChild(routes),
     SkeletonCardModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FilterBarModule,
   ],
   exports: [HomeComponent],
   providers: [GetProductsService],

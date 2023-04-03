@@ -1,4 +1,5 @@
-<div class="flex justify-center items-center mx-5">
+<div class="flex flex-col gap-10 justify-center items-center mx-5">
+  <app-filter-bar (filterParams)="onFilterValueChange($event)"></app-filter-bar>
   <div
     *ngIf="allProducts"
     class="grid justify-center grid-cols-3 gap-10 mx-auto max-w-[1200px] break-877:grid-cols-2 break-600:grid-cols-1"

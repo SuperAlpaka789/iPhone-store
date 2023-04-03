@@ -1,0 +1,222 @@
+<div class="flex items-center flex-col gap-10 max-w-[1200px] mx-auto px-4">
+  <ng-container *ngIf="(products$ | async)?.length; else elseBlock">
+    <ng-container *ngIf="!isPaymentCompleted">
+      <h2 class="self-start">Адрес доставки и способ оплаты:</h2>
+      <div class="flex flex-col gap-10 w-full">
+        <div class="flex flex-col justify-center card-border">
+          <ng-container *ngIf="products$ | async as products">
+            <div
+              *ngFor="let product of products"
+              class="p-5 flex gap-10 justify-between items-center text-base break-600:flex-col"
+            >
+              <div class="flex items-center gap-5">
+                <img
+                  class="max-w-[100px]"
+                  [src]="product.imageUrl"
+                  alt="product image"
+                />
+                <p>
+                  <strong>{{ product.name }}</strong>
+                </p>
+              </div>
+              <div class="flex gap-5">
+                <p>{{ product.count }}шт.</p>
+                <p>{{ product.price * product.count | currency : "RUB" }}</p>
+              </div>
+            </div>
+          </ng-container>
+          <div class="flex flex-col p-5">
+            <p class="text-right text-lg text-green-400">
+              К оплате: {{ totalprice$ | async | currency : "RUB" }}
+            </p>
+          </div>
+        </div>
+        <div class="flex justify-center px-5 card-border">
+          <form
+            [formGroup]="form"
+            class="flex flex-col gap-2 py-5 w-full"
+            (ngSubmit)="onSubmit()"
+          >
+            <div class="flex gap-4 w-full">
+              <mat-form-field appearance="fill">
+                <mat-label>Страна</mat-label>
+                <mat-select formControlName="country">
+                  <mat-option value="Россия"> Россия </mat-option>
+                  <mat-option value="Казахстан"> Казахстан </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="
+                    form.controls.country.hasError('required') || form.touched
+                  "
+                >
+                  Обязательное поле
+                </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="w-full">
+                <mat-label>Город</mat-label>
+                <input formControlName="city" matInput placeholder="Москва" />
+                <mat-error
+                  *ngIf="
+                    form.controls.city.hasError('required') || form.touched
+                  "
+                >
+                  Обязательное поле
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="flex gap-4 w-full break-600:flex-col">
+              <mat-form-field class="w-full">
+                <mat-label>Улица</mat-label>
+                <input
+                  formControlName="street"
+                  matInput
+                  placeholder="Ломоносовский проспект"
+                />
+                <mat-error *ngIf="form.controls.street.hasError('required')">
+                  Обязательное поле
+                </mat-error>
+                <mat-error *ngIf="form.controls.street.hasError('minlength')">
+                  Минимум 3 символа
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full">
+                <mat-label>Дом</mat-label>
+                <input
+                  formControlName="appartment"
+                  matInput
+                  placeholder="д. 27, корп. 4"
+                />
+                <mat-error
+                  *ngIf="
+                    form.controls.appartment.hasError('required') ||
+                    form.touched
+                  "
+                >
+                  Обязательное поле
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full">
+                <mat-label>Почтовый код</mat-label>
+                <input
+                  formControlName="postCode"
+                  matInput
+                  placeholder="119991"
+                />
+                <mat-error
+                  *ngIf="
+                    form.controls.postCode.hasError('required') || form.touched
+                  "
+                >
+                  Обязательное поле
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="flex gap-4 break-600:flex-col">
+              <mat-form-field class="w-full">
+                <mat-label>Имя</mat-label>
+                <input formControlName="name" matInput placeholder="Илья" />
+                <mat-error *ngIf="form.controls.name.hasError('required')">
+                  Обязательное поле
+                </mat-error>
+                <mat-error *ngIf="form.controls.name.hasError('pattern')">
+                  Неверный формат
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full">
+                <mat-label>Фамилия</mat-label>
+                <input
+                  formControlName="surename"
+                  matInput
+                  placeholder="Радионов"
+                />
+                <mat-error *ngIf="form.controls.surename.hasError('required')">
+                  Обязательное поле
+                </mat-error>
+                <mat-error *ngIf="form.controls.surename.hasError('pattern')">
+                  Неверный формат
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="flex gap-4 break-600:flex-col">
+              <mat-form-field class="w-full">
+                <mat-label>Телефон</mat-label>
+                <input
+                  formControlName="phoneNumber"
+                  matInput
+                  placeholder="+7 7172 578233"
+                />
+                <mat-error
+                  *ngIf="form.controls.phoneNumber.hasError('required')"
+                >
+                  Обязательное поле
+                </mat-error>
+                <mat-error
+                  *ngIf="form.controls.phoneNumber.hasError('pattern')"
+                >
+                  Неверный формат
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field class="w-full">
+                <mat-label>Электронная почта</mat-label>
+                <input
+                  formControlName="email"
+                  matInput
+                  placeholder="exemple@mail.ru"
+                />
+                <mat-error
+                  *ngIf="
+                    form.controls.email.hasError('required') && form.touched
+                  "
+                >
+                  Обязательное поле
+                </mat-error>
+                <mat-error *ngIf="form.controls.email.hasError('email')">
+                  Неверный формат
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <h2>Способ оплаты:</h2>
+              <mat-radio-group
+                aria-label="Select an option"
+                class="flex flex-col"
+                formControlName="paymentMethod"
+              >
+                <mat-radio-button value="qiwi">
+                  <div class="flex justify-center items-center">
+                    Qiwi кошелек
+                  </div>
+                </mat-radio-button>
+                <mat-radio-button value="card">
+                  Оплата картами Visa, MasterCard
+                </mat-radio-button>
+                <mat-radio-button value="payeer"> PAYEER </mat-radio-button>
+                <mat-radio-button value="webmoney">
+                  WebMoney WMZ
+                </mat-radio-button>
+                <mat-radio-button value="perfect_money">
+                  Perfect Money
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <button
+              mat-raised-button
+              color="warn"
+              type="submit"
+              [disabled]="form.invalid"
+            >
+              Оплатить
+            </button>
+          </form>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="isPaymentCompleted">
+      <h1>Ожидание оплаты...</h1>
+    </ng-container>
+  </ng-container>
+  <ng-template #elseBlock>
+    <h1>Товар не выбран</h1>
+  </ng-template>
+</div>

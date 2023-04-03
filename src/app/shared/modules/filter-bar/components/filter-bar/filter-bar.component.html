@@ -1,0 +1,28 @@
+<ng-container *ngIf="products$ | async as products">
+  <mat-card>
+    <mat-card-content>
+      <section class="example-section">
+        <!-- <mat-checkbox (click)="onFilterChange(allModels)">Все </mat-checkbox> -->
+        <mat-checkbox
+          class="example-margin"
+          *ngFor="let product of products"
+          [value]="product.model"
+          (change)="onFilterChange(product.model)"
+          >{{ product.model }}
+        </mat-checkbox>
+      </section>
+    </mat-card-content>
+    <button mat-raised-button (click)="onApplyFilters()">Показать</button>
+  </mat-card>
+</ng-container>
+<!-- <ng-container *ngIf="products$ | async as products">
+  <mat-chip-listbox aria-label="Fish selection">
+    <mat-chip-option color="accent" selected>Все</mat-chip-option>
+    <mat-chip-option
+      selectable="true"
+      *ngFor="let product of products"
+      color="accent"
+      >{{ product.model }}</mat-chip-option
+    >
+  </mat-chip-listbox>
+</ng-container> -->

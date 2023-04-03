@@ -16,6 +16,11 @@ import { StoreModule } from '@ngrx/store';
 import { addToCartReducer } from './shared/store/reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CartModule } from './cart/cart.module';
+import { AboutModule } from './about/about.module';
+import { DeliveryInfoModule } from './delivery-info/delivery-info.module';
+import { ContactsModule } from './contacts/contacts.module';
+import { OrderCompletionModule } from './order-completion/order-completion.module';
+import { PersistanceService } from './shared/services/persistance.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,8 +38,12 @@ import { CartModule } from './cart/cart.module';
     StoreModule.forRoot({ appState: addToCartReducer }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     CartModule,
+    AboutModule,
+    DeliveryInfoModule,
+    ContactsModule,
+    OrderCompletionModule,
   ],
-  providers: [],
+  providers: [PersistanceService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

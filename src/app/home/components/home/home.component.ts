@@ -41,4 +41,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.page = 1;
     this.fetchData();
   }
+
+  onFilterValueChange(emittedValue: Array<string>) {
+    console.log(emittedValue);
+
+    if (!emittedValue.length) {
+      this.allProducts = null;
+      this.fetchData();
+    } else {
+      this.allProducts = null;
+      this.productSubscription = this.getProductsService
+        .getAllProducts()
+        .subscribe((response) => {
+          const filterdArr = response.filter((prod) =>
+            emittedValue.includes(prod.model)
+          );
+
+          this.allProducts = filterdArr;
+        });
+    }
+  }
 }

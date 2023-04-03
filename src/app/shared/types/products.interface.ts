@@ -11,6 +11,7 @@ export interface ProductsInterface {
   count: number;
   type: string;
   model: string;
+  memory: string;
   detailsImages: Array<string>;
 }
 

@@ -105,7 +105,8 @@
       <ng-container *ngIf="totalProductsCount$ | async as totalAmount">
         <ng-container *ngIf="totalAmount !== 0">
           <div
-            class="absolute -top-2 -right-2 rounded-full w-5 h-5 bg-red-600 text-center text-white"
+            routerLink="/cart"
+            class="absolute -top-2 -right-2 rounded-full w-5 h-5 bg-red-600 text-center text-white cursor-pointer"
           >
             {{ totalAmount }}
           </div>
@@ -119,7 +120,7 @@
   class="flex justify-center items-center gap-5 burger-drop h-10"
   [ngClass]="{ 'burger-drop--active': showBurgerDropdown }"
 >
-  <a href="">О магазине</a>
-  <a href="">Доставка и оплата</a>
-  <a href="">Контакты</a>
+  <a routerLink="/about">О магазине</a>
+  <a routerLink="/delivery-info">Доставка и оплата</a>
+  <a routerLink="/contacts">Контакты</a>
 </nav>

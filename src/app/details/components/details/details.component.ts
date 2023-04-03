@@ -28,11 +28,17 @@ export class DetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const store = this.store
-      .pipe(select(selectedProductsSelector))
-      .subscribe((el) => {
-        console.log(el);
-      });
+    // const store = this.store
+    //   .pipe(select(selectedProductsSelector))
+    //   .subscribe((el) => {
+    //     console.log(el);
+    //   });
+
+    // this.store.pipe(select(selectedProductsSelector)).subscribe((el) => {
+    //   console.log(el);
+    // });
+
+    window.scroll(0, 0);
   }
 
   onAddToCartButtonClick(product: ProductsInterface): void {

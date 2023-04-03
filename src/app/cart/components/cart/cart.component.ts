@@ -17,11 +17,7 @@ import { ProductsInterface } from 'src/app/shared/types/products.interface';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent {
-  constructor(
-    private store: Store,
-    private router: Router,
-    private _snackBar: MatSnackBar
-  ) {}
+  constructor(private store: Store, private _snackBar: MatSnackBar) {}
 
   products$: Observable<ProductsInterface[]> = this.store.pipe(
     select(selectAppState),
@@ -50,8 +46,5 @@ export class CartComponent {
     this._snackBar.open('Товар удален из корзины', 'закрыть', {
       duration: 3000,
     });
-  }
-  onReturn(): void {
-    this.router.navigateByUrl('/');
   }
 }

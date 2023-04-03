@@ -39,9 +39,9 @@
   >
     <div class="flex flex-col">
       <p class="text-right text-lg text-green-400">
-        Total: {{ totalprice$ | async | currency : "RUB" }}
+        Всего: {{ totalprice$ | async | currency : "RUB" }}
       </p>
-      <button mat-raised-button color="warn">
+      <button mat-raised-button color="warn" routerLink="/order-completion">
         Перейти к оплате и доставке
       </button>
     </div>
@@ -59,7 +59,7 @@
           alt="empty cart image"
         />
       </div>
-      <button (click)="onReturn()" class="mt-16" mat-raised-button color="warn">
+      <button routerLink="/" class="mt-16" mat-raised-button color="warn">
         Вернуться к списку товаров
       </button>
     </div>
