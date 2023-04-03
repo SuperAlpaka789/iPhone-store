@@ -2,13 +2,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import "~@marcreichel/angular-carousel/css/main.css";
 
-/* Theme */
-
-@import "~@marcreichel/angular-carousel/themes/stripes.css";
-/* or */
-@import "~@marcreichel/angular-carousel/themes/dots.css";
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 
 html,
 body {

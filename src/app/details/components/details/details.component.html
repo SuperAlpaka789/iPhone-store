@@ -9,13 +9,32 @@
     class="grid justify-center items-center mx-auto grid-cols-2 break-1100:grid-cols-1 max-w-[1200px] rounded-xl details-background"
   >
     <div class="flex gap-10 flex-col p-4">
-      <angular-carousel [infinite]="true">
+      <!-- <angular-carousel [infinite]="true">
         <ng-container *ngFor="let imageUrl of product.detailsImages">
           <div *angularCarouselSlide class="flex justify-center items-center">
             <img [src]="imageUrl" alt="iphone image" class="max-h-[500px]" />
           </div>
         </ng-container>
-      </angular-carousel>
+      </angular-carousel> -->
+
+      <p-carousel
+        [value]="product.detailsImages"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="true"
+        autoPlayInterval="3000"
+        class="flex items-center justify-center"
+      >
+        <ng-template let-image pTemplate="item">
+          <div class="flex items-center justify-center">
+            <img
+              [src]="image"
+              alt="phone image"
+              class="max-w-[100px] shadow-2"
+            />
+          </div>
+        </ng-template>
+      </p-carousel>
     </div>
 
     <div
